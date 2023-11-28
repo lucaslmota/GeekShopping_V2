@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GeekShopping.ProductAPI.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace GeekShopping.ProductAPI.Context
 {
@@ -6,5 +7,7 @@ namespace GeekShopping.ProductAPI.Context
     {
         public MyDbContext() {}
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) {}
+
+        public DbSet<Product> products { get; set; }
     }
 }
