@@ -1,4 +1,10 @@
+using GeekShopping.ProductAPI.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("FreelConnection");
+builder.Services.AddDbContext<MyDbContext>(p => p.UseSqlServer(connectionString));
 
 // Add services to the container.
 
